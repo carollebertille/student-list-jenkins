@@ -5,4 +5,4 @@
 - src: geerlingguy.docker 
 
 # Install a role for gitlab/gitlab-runner
-- src: https://github.com/HP41/ansible-docker-gitlab.git 
+#src: https://github.com/HP41/ansible-docker-gitlab.git 

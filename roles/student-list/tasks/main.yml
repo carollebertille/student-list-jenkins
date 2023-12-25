@@ -11,6 +11,7 @@
     password: "{{ docker_hub_password }}"
   tags:
     - build
+
 - name: create project directory
   file:
     path: "{{ home }}/student-list"
@@ -18,11 +19,12 @@
   tags:
     - build
     - deploy
+
 - name: copy devops private key file
   copy:
-    content: '{{ gitlab_private_key }}'
+    content: '{{ github_private_key }}'
     dest: "{{ home }}/.ssh/id_rsa"
-    owner: centos
+    owner: ubuntu
   tags:
     - build
     - deploy
