@@ -18,7 +18,7 @@
     state: directory
   tags:
     - build
-    - deploy
+    - prod
 
 - name: copy devops private key file
   copy:
@@ -27,7 +27,7 @@
     owner: ubuntu
   tags:
     - build
-    - deploy
+    - prod
 
 - name: Retrieve stident-list addons source code
   git:
@@ -40,7 +40,7 @@
     version: "{{ student_list_source_branch }}"
   tags:
     - build
-    - deploy
+    - prod
 
 - name: Build api image and push it to Docker Hub
   docker_image:
@@ -57,7 +57,7 @@
   docker_network:
     name: student-list_network
   tags:
-    - deploy
+    - prod
 # deploy api
 
 - name: Deploy api
@@ -73,7 +73,7 @@
     ports:
       - "4000:5000"
   tags:
-    - deploy
+    - prod
 
 # deploy frontend
 
@@ -92,4 +92,4 @@
     ports:
       - "80:80"
   tags:
-    - deploy
+    - prod
